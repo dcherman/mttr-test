@@ -24,7 +24,7 @@ async function awaitSuccess() {
   while (true) {
     try {
       console.log(Date.now(), 'Checking service health');
-      await axios.get(`http://mttr-test${argv.instance}.client.factset.io`);
+      await axios.get(`${argv.url}`);
       break;
     } catch(err) {
       if (err.response) {
@@ -39,7 +39,7 @@ async function awaitSuccess() {
 }
 
 async function killService() {
-  await axios.post(`http://mttr-test${argv.instance}.client.factset.io/die`);
+  await axios.post(`http://${argv.url}/die`);
 }
 
 function sleep(timeMs) {
