@@ -15,7 +15,7 @@ app.post('/die', (request, response) => {
 });
 
 const lightship = createLightship({
-  port: lightshipPort,
+  port: 9000,
 });
 
 const server = app.listen(process.env.PORT || 8000, () => {
