@@ -13,6 +13,18 @@ app.post('/die', (request, response) => {
   });
 });
 
-app.listen(process.env.PORT, () => {
-  console.log('Listening on port', process.env.PORT);
+const lightship = createLightship({
+  port: lightshipPort,
+});
+
+const server = app.listen(process.env.PORT || 8000, () => {
+  console.log('Listening on', port);
+  lightship.signalReady();
+  console.log('Ready to serve traffic');
+});
+
+lightship.registerShutdownHandler(() => {
+  return new Promise((resolve, reject) => {
+    server.close((err) => err ? reject(err) : resolve());
+  });
 });
