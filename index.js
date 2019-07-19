@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const {createLightship} = require('lightship');
 
 app.get('/', (request, response) => {
   response.send('OK');
