@@ -19,7 +19,6 @@ const lightship = createLightship({
 });
 
 const server = app.listen(process.env.PORT || 8000, () => {
-  console.log('Listening on', port);
   lightship.signalReady();
   console.log('Ready to serve traffic');
 });
