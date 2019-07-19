@@ -12,19 +12,19 @@ metadata:
   name: mttr
   namespace: mttr
   labels:
-    app: hello-world
+    app: mttr
 
 spec:
   selector:
     matchLabels:
-      app: hello-world
+      app: mttr
   template:
     metadata:
       labels:
         app: mttr
     spec:
       containers:
-      - name: hello-world
+      - name: mttr
         image: exiges/mttr-test:1.0.0
         resources:
           requests:
@@ -56,8 +56,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
- name: hello-world
- namespace: hello-world
+ name: mttr
+ namespace: mttr
  labels:
    app: mttr
 spec:
