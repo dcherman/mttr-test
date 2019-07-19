@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: exiges/mttr-test:latest
+        image: exiges/mttr-test:1.0.0
         resources:
           requests:
             cpu: 250m
